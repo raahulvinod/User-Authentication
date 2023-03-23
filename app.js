@@ -28,7 +28,10 @@ app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  store: sessionStore
+  store: sessionStore,
+  cookie: {
+    maxAge: 60000
+  }
 }));
 
 app.use(demoRoutes);
